@@ -7,10 +7,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AutoWrapper;
-using System.Linq;
-using Newtonsoft.Json;
-using LIB_TeleBirrMerchant.DAL.Entity.Account;
-using LIB_TeleBirrMerchant.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -29,6 +25,7 @@ using LIB_TeleBirrMerchant.DAL.Contexts;
 using Microsoft.AspNetCore.Authentication.Certificate;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using LIB_TeleBirrMerchant.DAL.Entity.Account;
 
 namespace LIB_TeleBirrMerchant.UI
 {

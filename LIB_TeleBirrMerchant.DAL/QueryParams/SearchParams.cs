@@ -4,7 +4,7 @@ using System;
 
 namespace LIB_TeleBirrMerchant.DAL.DTO
 {
-    public class SearchParams : QueryParameters
+    public class SearchParams 
     {
         public string AccountNo { get; set; }
         public DateTime DateFrom { get; set; }

@@ -3,6 +3,15 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Enum\**" />
+    <Compile Remove="Settings\**" />
+    <EmbeddedResource Remove="Enum\**" />
+    <EmbeddedResource Remove="Settings\**" />
+    <None Remove="Enum\**" />
+    <None Remove="Settings\**" />
+  </ItemGroup>
   <ItemGroup>
 	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
 	  <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
@@ -18,11 +27,5 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\" />
-    <Folder Include="DBInitializer\" />
-    <Folder Include="Enum\" />
-    <Folder Include="Settings\" />
   </ItemGroup>	
 </Project>

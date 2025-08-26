@@ -11,13 +11,17 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'LIB_TeleBirrMerchant.UI' " />
   <ItemGroup>
     <Compile Remove="ErrorHandler\**" />
-    <Compile Remove="Uploads\XML\**" />
+    <Compile Remove="Uploads\**" />
+    <Compile Remove="ViewModels\**" />
     <Content Remove="ErrorHandler\**" />
-    <Content Remove="Uploads\XML\**" />
+    <Content Remove="Uploads\**" />
+    <Content Remove="ViewModels\**" />
     <EmbeddedResource Remove="ErrorHandler\**" />
-    <EmbeddedResource Remove="Uploads\XML\**" />
+    <EmbeddedResource Remove="Uploads\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
     <None Remove="ErrorHandler\**" />
-    <None Remove="Uploads\XML\**" />
+    <None Remove="Uploads\**" />
+    <None Remove="ViewModels\**" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LIB_TeleBirrMerchant.Application\LIB_TeleBirrMerchant.Application.csproj" />
@@ -53,9 +57,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Uploads\" />
     <Folder Include="wwwroot\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\Documents\" />
  
   </ItemGroup>
