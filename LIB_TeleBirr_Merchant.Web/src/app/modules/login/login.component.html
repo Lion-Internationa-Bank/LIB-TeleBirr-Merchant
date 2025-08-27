@@ -1,0 +1,54 @@
+<div class="login mt-5">
+  <div class="row">
+    <!-- Introduction Text on the Side -->
+     
+    <div class="col-md-4 intro-text">
+      <p> Welcome </p>
+      <!-- <p> Welcome ,  This platform manages MPESA- FANA-AWACH Transactions efficiently for Lion International Bank S.C.</p> -->
+    </div>
+
+    <!-- Login Form -->
+    <div class="col-md-6">
+      <div class="ml-5 ">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <a class="simple-text">
+                <img class="logo-img" width="100px" src="/assets/img/logolib.png"/>
+              </a>
+            </div>
+            <div class="col-md-6">
+               <a class="simple-text ">
+          <img class="logo-img" src="/assets/img/telebirr.png"/>
+        </a>
+            </div>
+          </div>
+        </div>
+        
+       
+      
+      <div class="login-container mt-3">
+        <h2>telebirr Merchant </h2>
+        <h3>Login</h3>
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required>
+          </div>
+          <button type="submit">Login</button>
+          <mat-error *ngIf="authService.message!=''" class="pull-right">{{message}}</mat-error>
+
+
+
+<mat-error *ngIf="authService.message" class="pull-right">
+  {{ authService.message }}
+</mat-error>    
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+ <div class="row ">
+    <div class="col-md-11 ">
+      <div class="mt-2">
+        <div class="card ml-5">
+           <h5 class="m-2 " style="color: rgb(0, 66, 93)"> telebirr merchant transaction request</h5>
+            <hr>
+            <div class="card-header cardhead">
+              <p >Complete form for request</p>
+            </div>
+           
+            <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+            
+           
+            <div class="card-body ml-5 ">
+              <div class="row" *ngIf="transactionType==2"> 
+                <div class="col-md-5">
+                  Choose Payment Method:
+                <mat-radio-group [(ngModel)]="transactionType" [value]="transactionType"  [ngModelOptions]="{standalone: true}" (change)="transactionTypeChange()">
+                  <mat-radio-button [value]='1' selected>Transfere</mat-radio-button>
+                  <mat-radio-button [value]='2'>Cash</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+                <div class="row" >
+                    <div class="col-md-5" *ngIf="!merchantName">
+            <mat-form-field>
+                <mat-label>merchant short code</mat-label>
+                <input matInput type='text' [(ngModel)]="merchantShortCode" />
+                <button
+                  class="bt"
+                  mat-icon-button
+                  matSuffix
+                  (click)="getMerchantbyShortCode()">
+                  <mat-icon style="color: black;">search</mat-icon>
+                </button>
+              </mat-form-field>
+                    </div>
+                   
+                </div>
+                <form *ngIf="merchantName" [formGroup]="TeleBirrMerchantRequestForm">
+                <div class="row" > 
+                  <div class="col-md-5" >
+                  <mat-form-field>
+                    <mat-label>Customer Name</mat-label>
+                    <input formControlName="MerchantName"  required type="text" matInput>
+                  
+                  </mat-form-field>
+                </div></div>
+
+              
+              <div class="row" *ngIf="transactionType==1"> 
+                <div class="col-md-5">
+                  <mat-form-field>
+                    <mat-label>Customer Account Number</mat-label>
+                    <!-- <input formControlName="libcustomeracctno"  type="text" matInput >  -->
+                    <input formControlName="libcustomeracctno"  type="text" matInput (change)="customeracctnoChange()">
+                  
+                  </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="customerbranch"> 
+              <div class="col-md-5">
+                <mat-form-field>
+                  <mat-label>Customer Name</mat-label>
+                  <input formControlName="customerName"   required type="text" matInput readonly>
+                </mat-form-field>
+            </div>
+          </div>
+
+            <div class="row" *ngIf="customerbranch"> 
+              <div class="col-md-5">
+                <mat-form-field>
+                  <mat-label>Customer Branch</mat-label>
+                  <input formControlName="customerbranch"   required type="text" matInput readonly>
+                 
+                </mat-form-field>
+            </div>
+          </div>
+
+              <div class="row" *ngIf="transactionType==2 || transactionType==1"> 
+                <div class="col-md-5">
+                  <mat-form-field>
+                    <mat-label>Amount</mat-label>
+                    <input formControlName="amt"  required type="number" matInput (keyup)="amtChange()">
+                    
+                    <button
+                    mat-icon-button
+                    matSuffix
+                    (click)="checkAccountBalance()"
+                    class="bt">
+                    <mat-icon style="color: black;">check</mat-icon>
+                  </button>
+                  </mat-form-field>
+
+              </div>
+            </div>
+            <div >
+              <button mat-flat-button color="primary" *ngIf="canrequest" (click)="SaveRequest()" [disabled]="!TeleBirrMerchantRequestForm.valid">Submit</button>
+              <!-- <button mat-flat-button color="primary" (click)="SaveRequest()" >Submit</button> -->
+            </div>
+                </form>
+
+              </div>
+
+        </div>
+      </div>
+    </div>
+  </div> 
+

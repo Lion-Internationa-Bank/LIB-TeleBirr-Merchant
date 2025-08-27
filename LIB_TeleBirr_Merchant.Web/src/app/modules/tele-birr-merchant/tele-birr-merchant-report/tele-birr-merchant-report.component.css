@@ -1,0 +1,48 @@
+.container-form-fields {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+
+.form-field {
+    width: 25%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+mat-form-field{
+    width: 100%;
+}
+
+
+.logo-img {
+  width: 16%;
+  /* height: auto; */
+}
+
+.slip-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px 0; /* Add margin for spacing */
+}
+
+h3 {
+  color: #018ca8; /* Change color for headings */
+  margin-top: 20px;
+}
+
+ .cooperative-name {
+    
+    font-size: 104px;
+    margin-bottom: 5px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+
+
+
+
+
+
+
+

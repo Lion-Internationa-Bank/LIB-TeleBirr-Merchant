@@ -1,0 +1,14 @@
+mat-form-field{
+    width: 100%;
+}
+
+
+.bt{
+    border: #083862;
+    border-style: double;
+    border-radius: 20%;
+}
+
+mat-radio-group{
+    color: black;
+}
