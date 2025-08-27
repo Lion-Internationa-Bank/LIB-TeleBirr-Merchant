@@ -57,7 +57,6 @@ export class SidebarComponent implements OnInit {
   
 user:String;
 ngOnInit() {
-debugger
 if(!this.authService.isitAuthenticated()) return;
 
  
@@ -116,7 +115,6 @@ if(!this.authService.isitAuthenticated()) return;
   //   }
   } 
   else {
-    debugger
      this.router.navigate(['/unauthorized']);
   }
   // else if (this.role === 'Admin') {

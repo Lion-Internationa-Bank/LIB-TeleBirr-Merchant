@@ -10,8 +10,6 @@ namespace LIB_TeleBirrMerchant.Application.Interfaces
 {
     public interface IMerchantOutgoingTransactionService
     {
-        //Task<ResponseDTO> MerchantOutgoingTransaction(OutgoingTransfereDTO outgoingTransferedto);
-        //Task OutgoingTransfereCallBackResponse(string xmlContent);
         Task CreateMerchantTransfere(MerchantOutgoingTransaction merchantOutgoingTransaction);
         Task<ResponseDTO> SimulateLIBTransfer(MerchantOutgoingTransactionSimulation merchantOutgoingTransaction);
         Task<ResponseDTO> ApproveMerchantTransfere(int Id);

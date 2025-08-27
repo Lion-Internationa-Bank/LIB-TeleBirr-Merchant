@@ -8,8 +8,6 @@ import { ChangePasswordComponent } from './modules/change-password/change-passwo
 
 import { AdminAuthGuardSecondService } from './service/admin-auth-guard-second.service';
 import { AdminAuthAdminGuardService } from './service/admin-auth-admin-guard.service';
-import { ReportAuthGuardService } from './service/report-auth-guard.service';
-import { CustomFanaAuthGuardService } from './service/CustomFana-auth-guard.service ';
 import { UnAuthorizedComponent } from './shared/components/un-authorized/un-authorized.component';
  // Create this component for 404 page
 

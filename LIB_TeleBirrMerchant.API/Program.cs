@@ -17,18 +17,7 @@ namespace LIB_TeleBirrMerchant.UI
             {
                 var services = scope.ServiceProvider;
 
-                //try
-                //{
-                //    var databaseInitializer = services.GetRequiredService<IDatabaseInitializer>();
-                //    databaseInitializer.SeedAsync().Wait();
-                //}
-                //catch (Exception ex)
-                //{
-                
-                //    throw new Exception( ex.Message);
-                //}
             }
-            //host.MigrateDatabase();
             host.Run();
         }
 

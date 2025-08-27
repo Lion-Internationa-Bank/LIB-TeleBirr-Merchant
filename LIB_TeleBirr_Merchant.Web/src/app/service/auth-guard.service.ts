@@ -10,7 +10,6 @@ export class AuthGuardService implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
-    debugger
     if (this.authService.isitAuthenticated()) {
    
       return true; // Allow navigation to /user/:id if user is authenticated

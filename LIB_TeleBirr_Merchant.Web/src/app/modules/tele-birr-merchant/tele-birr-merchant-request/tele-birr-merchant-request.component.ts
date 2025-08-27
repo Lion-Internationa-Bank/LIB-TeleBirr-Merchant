@@ -187,7 +187,6 @@ export class TeleBirrMerchantRequestComponent {
   }
 
   checkCustomerBalance(){
-    debugger
     this.ngxService.start('checkCustomerBalance');
     let customerAmmount = this.TeleBirrMerchantRequestForm.controls['amt'].value;
     let customerAccountNo = this.TeleBirrMerchantRequestForm.controls['libcustomeracctno'].value;
@@ -237,12 +236,9 @@ export class TeleBirrMerchantRequestComponent {
       this.ngxService.stop('checkAccount');
       return
     };
-    debugger
     this._teleBirrMerchantService.LibaccountchecklibTransfer(customerAccountNo).subscribe(response => {
-      debugger;
       this.loading=false;
       this.ngxService.stop('checkAccount');
-      debugger
       if (response) {
 
         this.customerbranch =response.branch

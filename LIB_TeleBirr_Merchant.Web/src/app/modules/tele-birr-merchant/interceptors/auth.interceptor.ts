@@ -18,7 +18,6 @@ export class AuthInterceptor implements HttpInterceptor {
     Observable<HttpEvent<any>> {
         // get the auth token
         var token =  localStorage.getItem('token');
-        debugger
         // if the token is present, clone the request
         // replacing the original headers with the authorization
         if (token) {

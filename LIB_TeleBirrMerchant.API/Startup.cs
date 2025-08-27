@@ -120,21 +120,9 @@ namespace LIB_TeleBirrMerchant.UI
                     policy.RequireClaim("MPESA", "true"));
             });
             services.AddServicesInAssembly(Configuration);
-            //services.AddApiVersioning();
-            //services.AddMvcCore()
-            //      .AddNewtonsoftJson(options =>
-            //      {
-            //          options.UseMemberCasing();
-            //          options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            //      });
 
             services.AddAutoMapper(typeof(Startup));
-            //var data = Configuration.GetConnectionString("DefaultConnection1");
-            //services.AddHangfire(configuration => configuration
-            //.UsePostgreSqlStorage(Configuration.GetConnectionString("DefaultConnection1")));
-
-            // Add the Hangfire server
-            //  services.AddHangfireServer();
+            
 
 
             services.AddMvc(config =>
@@ -194,8 +182,6 @@ namespace LIB_TeleBirrMerchant.UI
             });
             // app.UseHangfireDashboard();
 
-            //// Ensure that Hangfire server is running
-            // app.UseHangfireServer();
 
             // app.UseHttpsRedirection();
             app.UseRouting();
@@ -203,12 +189,6 @@ namespace LIB_TeleBirrMerchant.UI
             app.UseCors("CorsPolicy");
 
             app.UseStaticFiles();
-            //app.UseStaticFiles(new StaticFileOptions()
-            //{
-            //    FileProvider = new PhysicalFileProvider(@"\\10.1.22.25\KycDocument"),
-            //    FileProvider = new PhysicalFileProvider(@"\\DESKTOP-CAB0LFO\KycDocument"),
-            //    RequestPath = new PathString("/KycDocument")
-            //});MapControllers
 
             app.UseAuthentication();
             app.UseAuthorization();
@@ -217,18 +197,7 @@ namespace LIB_TeleBirrMerchant.UI
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
             });
-            // RecurringJob.AddOrUpdate<IMerchantOutgoingTransactionRepository>(job => job.GetBatchEthswitchOutgoingTransaction(), "0 0 * * *"); // Adjust the cron expression as needed
-            //Initialize(app.ApplicationServices);
-        }
-        private static void Initialize(IServiceProvider service)
-        {
-            using (var serviceScope = service.CreateScope())
-            {
 
-                var scopeServiceProvider = serviceScope.ServiceProvider;
-                // var db = scopeServiceProvider.GetService<IlriInfomanDBContext>();
-
-            }
         }
 
     }
