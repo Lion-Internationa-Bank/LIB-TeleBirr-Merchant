@@ -40,7 +40,6 @@ export class AuthInterceptor implements HttpInterceptor {
          return this.handelUnAuthError(req,next);
         } else if(error.status === 0){
           this.toastr.error("The Server not Responding Please try again");
-          
         }}
         return throwError(error);
         })

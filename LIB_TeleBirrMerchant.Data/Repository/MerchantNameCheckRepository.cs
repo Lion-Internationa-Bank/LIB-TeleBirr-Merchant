@@ -80,6 +80,18 @@ namespace LIB_TeleBirrMerchant.Infra.Data.Repository
                 else
                 {
                     string message = TeleBirrResponseCodeConst.GetMessage(nameCheckResponse.resultCode);
+                    MerchantNameCheck merchantNameCheck = new MerchantNameCheck()
+                    {
+                        MerchantName = nameCheckResponse.organizationName,
+                        ShortCode = Identifier,
+                        ResultCode = nameCheckResponse.resultCode,
+                        ResultType = nameCheckResponse.resultType,
+                        Remark = "",
+                        CreatedDate = DateTime.Now,
+                        ResultDesc = message
+                    };
+                    await _dbContext.MerchantNameCheck.AddAsync(merchantNameCheck);
+                    await _dbContext.SaveChangesAsync();
                     var ressponse = new NameCheckResponseDTO()
                     {
                         success = false,
