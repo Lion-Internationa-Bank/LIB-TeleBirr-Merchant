@@ -285,6 +285,7 @@ namespace LIB_TeleBirrMerchant.Infra.Data.Repository
                         transaction.CbsTransactionId = cbsResult.transactionID;
                         transaction.ResponseCode = cbsResult.status;
                         transaction.Status = "Approved";
+                        transaction.ApprovedDate = DateTime.Now;
                         transaction.ResponseMessage = cbsResult.message;
                         transaction.TelebirrTransactionId = cbsResult.teleReceiptNumber;
                         _context.MerchantOutgoingTransaction.Update(transaction);
@@ -301,6 +302,7 @@ namespace LIB_TeleBirrMerchant.Infra.Data.Repository
                         transaction.ResponseCode = "1";
                         transaction.ResponseMessage = "success";
                         transaction.Status = "Approved";
+                        transaction.ApprovedDate = DateTime.Now;
                         //transaction.TelebirrTransactionId = paymentIntiat.TransactionID;
                         _context.MerchantOutgoingTransaction.Update(transaction);
                         await _context.SaveChangesAsync();
